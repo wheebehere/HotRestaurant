@@ -7,6 +7,7 @@ var path = require('path');
 var exphbs = require('express-handlebars');
 var handlebars = require('handlebars')
 app.engine('handlebars',exphbs({defaultLayout: 'main'}))
+app.set('view engine', 'handlebars');
 
 var PORT = 8080;
 
@@ -16,18 +17,12 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 
-// require our waiting list and reservations arrays
-require('./data/table-data.js');
-
-require('./data/waitinglist-data.js');
-
 //require html-routes
 
 	app.use(express.static('public'));
+require('./app/routing/html-routes.js')(app);
 
-require('./routing/html-routes.js')(app);
-
-require('./routing/api-routes.js').apimodules(app);
+require('./app/routing/api-routes.js').apimodules(app);
 
 
 

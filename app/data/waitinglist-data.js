@@ -1,9 +1,10 @@
-var waitList = [
+//var waitList = [
+module.exports = [
 {
 	waitNumber: 1,
-	name: "",
-	phoneNumber: "",
-	email: ""
+	name: "Caitlin Hooper",
+	phoneNumber: "407-555-1313",
+	email: "jaxrulez@gmail.com"
 
 },
 

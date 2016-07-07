@@ -1,10 +1,10 @@
-exports.table_reservations = [
-
+//exports.table_reservations = [
+module.exports = [
 {
 	tableNumber: 1,
-	name: "",
-	phoneNumber: "",
-	email: "",
+	name: "Susan",
+	phoneNumber: "407-555-1212",
+	email: "wheebehere@gmail.com",
 	reserved: false
 
 },

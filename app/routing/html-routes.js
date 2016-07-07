@@ -1,8 +1,9 @@
-
+var path = require('path')
 
 module.exports = function(app){
 
-
+var tableData = require('../data/table-data.js');
+var waitingList = require('../data/waitinglist-data.js');
 
 	app.get('/', function(req, res){
 		
@@ -16,10 +17,12 @@ module.exports = function(app){
 		res.sendFile(path.join(__dirname, 'public', '/reserve.html'));
 	});
 
-	app.get('/tables.html', function(req, res){
-		
+	app.get('/tables', function(req, res){
+		res.render('tables', {
+			tables: tableData
+		})
 		//send to homepage
-		res.sendFile(path.join(__dirname, 'public', '/tables.html'));
+		//res.sendFile(path.join(__dirname, 'public', '/tables.html'));
 	});
 
 };
